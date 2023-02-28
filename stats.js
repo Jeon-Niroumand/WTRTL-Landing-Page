@@ -1,7 +1,25 @@
-coins = [`wrapped-turtlecoin`];
-twentyFourHoursAgo = (Math.round(Date.now()/1000)) - 86400; //return epoch time 24 hours ago
-now = Math.floor(Date.now()/1000); //return epoch time
-rsi = 100 - (100 / (1 + (avgUp / avgDwn))) //relative strength index
+const coins = [`wrapped-turtlecoin`];
+let twentyFourHoursAgo = (Math.round(Date.now()/1000)) - 86400; //return epoch time 24 hours ago
+let now = Math.floor(Date.now()/1000); //return epoch time
+const closingPrices = []
+
+function calculateRSI(closingPrices) {
+    let avgUp = 0; //calculate the average upward change
+    for (let i = 1; i < closingPrices.length; i++) {
+        avgUp += Math.max(0, closingPrices[i] - closingPrices[i - 1]);
+    }
+    avgUp /= closingPrices.length;
+
+    let avgDwn = 0; // calculate the average downward change
+    for (let i = 1; i < closingPrices.length; i++) {
+        avgDwn += Math.max(0, closingPrices[i - 1] - closingPrices[i]);
+    }
+    avgDwn /= closingPrices.length;
+
+    const rsi = 100 - (100 / (1 + (avgUp / avgDwn))) //relative strength index formula
+
+    return rsi;
+}
 
 const coin_usd = new XMLHttpRequest;
 coin_usd.onload = function() {
@@ -16,9 +34,11 @@ ohlc_wtrtl_usd.onload = function() {
     const ohlc = JSON.parse(this.responseText);
     const iterator = ohlc.values();
     for(const value of iterator) {
-        console.log(value[0])
+        closingPrices.push(value[4])
     }
-    document.getElementById("ohlc").innerHTML = ohlc;
+
+    console.log(calculateRSI(closingPrices))
+    document.getElementById("rsi").innerHTML = calculateRSI(closingPrices).toFixed(1);
 }
 ohlc_wtrtl_usd.open("GET", "https://api.coingecko.com/api/v3/coins/wrapped-turtlecoin/ohlc?vs_currency=usd&days=1");
 ohlc_wtrtl_usd.send();
