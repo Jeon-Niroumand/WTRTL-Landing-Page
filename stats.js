@@ -1,6 +1,7 @@
 coins = [`wrapped-turtlecoin`];
 twentyFourHoursAgo = (Math.round(Date.now()/1000)) - 86400; //return epoch time 24 hours ago
-now = Math.round(Date.now()/1000); //return epoch time
+now = Math.floor(Date.now()/1000); //return epoch time
+rsi = 100 - (100 / (1 + (avgUp / avgDwn))) //relative strength index
 
 const coin_usd = new XMLHttpRequest;
 coin_usd.onload = function() {
@@ -10,13 +11,25 @@ coin_usd.onload = function() {
 coin_usd.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=wrapped-turtlecoin&vs_currencies=usd&precision=18");
 coin_usd.send();
 
-const oneDayPrices = new XMLHttpRequest;
+const ohlc_wtrtl_usd = new XMLHttpRequest;
+ohlc_wtrtl_usd.onload = function() {
+    const ohlc = JSON.parse(this.responseText);
+    const iterator = ohlc.values();
+    for(const value of iterator) {
+        console.log(value[0])
+    }
+    document.getElementById("ohlc").innerHTML = ohlc;
+}
+ohlc_wtrtl_usd.open("GET", "https://api.coingecko.com/api/v3/coins/wrapped-turtlecoin/ohlc?vs_currency=usd&days=1");
+ohlc_wtrtl_usd.send();
+
+/*const oneDayPrices = new XMLHttpRequest;
 oneDayPrices.onload = function() {
     const coinPrices = JSON.parse(this.responseText);
-    console.log(coinPrices.prices)//return list of prices
+    console.log(coinPrices.prices)//return previous 24h list of prices
 }
 oneDayPrices.open("GET", `https://api.coingecko.com/api/v3/coins/wrapped-turtlecoin/market_chart/range?vs_currency=usd&from=${twentyFourHoursAgo}&to=${now}`)
-oneDayPrices.send();
+oneDayPrices.send();*/
 
 for (coin in coins) {
     console.log(coins[coin]);
