@@ -4,16 +4,20 @@
     <title>HOME</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <script src ="stats.js" defer></script>
 </head>
 
 <body>
-    <h1>Wrapped TurtleCoin on the Fantom Opera Network</h1>
-    <div>wtrtl-usd $</div>
-    <div id="wtrtl_price"></div>
-    <p></p>
-    <div>RSI (updates ~30m) **24h depth**</div>
-    <div id="rsi"></div>
+    <div class="header">
+        <h1>Wrapped TurtleCoin on the Fantom Opera Network</h1>
+        <div class="container">
+            <div>wtrtl-usd $<div id="wtrtl_price"></div></div>
+               
+            <div>RSI (updates ~30m) **24h depth**<div id="rsi"></div></div>
+            
+        </div>
+    </div>
     <p>What does relative strength index (RSI) mean? An RSI value of 30 or less suggests an oversold/undervalued condition. An RSI value of 70 or more suggests an overbought/overvalued condition. Otherwise the RSI suggests a fair price... Take this metric with a pinch of salt.</p>
 </body>
 </html>
