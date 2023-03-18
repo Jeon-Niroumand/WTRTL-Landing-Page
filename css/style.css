@@ -12,6 +12,12 @@ h1{
     margin: auto;
     text-align: center;
     font-size: 40pt;
+    font-family: "Jigsaw Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    letter-spacing: 0.54px;
+    line-height: 26px;
+    text-transform: none;
 }
 
 .container{

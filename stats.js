@@ -24,7 +24,7 @@ function calculateRSI(closingPrices) {
 const coin_usd = new XMLHttpRequest;
 coin_usd.onload = function() {
     const wtrtlPrice = JSON.parse(this.responseText);
-    document.getElementById("wtrtl_price").innerHTML = wtrtlPrice[coins].usd; // return price in usd
+    document.getElementById("wtrtl_price").innerHTML = `wtrtl-usd $${wtrtlPrice[coins].usd.toFixed(5)}`; // return price in usd
 }
 coin_usd.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=wrapped-turtlecoin&vs_currencies=usd&precision=18");
 coin_usd.send();
@@ -38,7 +38,7 @@ ohlc_wtrtl_usd.onload = function() {
     }
 
     console.log(calculateRSI(closingPrices))
-    document.getElementById("rsi").innerHTML = calculateRSI(closingPrices).toFixed(1);
+    document.getElementById("rsi").innerHTML = `RSI: ${calculateRSI(closingPrices).toFixed(1)}`;
 }
 ohlc_wtrtl_usd.open("GET", "https://api.coingecko.com/api/v3/coins/wrapped-turtlecoin/ohlc?vs_currency=usd&days=1");
 ohlc_wtrtl_usd.send();
