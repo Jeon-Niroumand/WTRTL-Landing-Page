@@ -11,9 +11,11 @@ body{
 
 .header{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     border-bottom: 2px solid green;
     font-size: 18px;
+    position: static;
 }
 
 .header h1{
@@ -27,7 +29,7 @@ body{
     margin-right: auto;
     flex-direction: row;
     column-gap: 50px;
-    align-items: flex-end;
+    
     
 }
 
@@ -38,6 +40,7 @@ body{
     right: 0;
     margin-left: auto;
     margin-right: 30px;
+    margin-top: 7px;
     position: fixed;
 }
 
@@ -49,7 +52,7 @@ body{
     right: 0;
     margin-left: auto;
     margin-right: 38px;
-    margin-top: 8px;
+    margin-top: 16px;
     position: fixed;
 }
 

@@ -24,7 +24,7 @@ function calculateRSI(closingPrices) {
 const coin_usd = new XMLHttpRequest;
 coin_usd.onload = function() {
     const wtrtlPrice = JSON.parse(this.responseText);
-    document.getElementById("wtrtl_price").innerHTML = `wtrtl-usd $${wtrtlPrice[coins].usd.toFixed(5)}`; // return price in usd
+    document.getElementById("wtrtl_price").innerHTML = `WTRTL-USD: $${wtrtlPrice[coins].usd.toFixed(5)}`; // return price in usd
 }
 coin_usd.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=wrapped-turtlecoin&vs_currencies=usd&precision=18");
 coin_usd.send();
