@@ -13,24 +13,28 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #00843D;
     font-size: 18px;
     position: static;
 }
 
 .header h1{
-    text-align: left;
-    width: 80px
+    display: flex;
+    flex-direction: row;
+    width: 130px;
+}
+
+h1 img{
+    padding-left: 50px;
+    width: 100px;
 }
 
 .container{
     display: flex;
-    margin-left: auto;
+    /*margin-left: auto;*/
     margin-right: auto;
     flex-direction: row;
-    column-gap: 50px;
-    
-    
+    column-gap: 50px; 
 }
 
 #hamburger{
