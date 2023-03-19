@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="menu.js" defer></script>
     <script src ="stats.js" defer></script>
 </head>
 
 <body>
     <div class="header">
-        <h1>Wrapped TurtleCoin on the Fantom Opera Network ggGG</h1>
+        <h1>Wrapped TurtleCoin</h1>
+        <input type="image" id="hamburger" src="./img/more.png" alt="more" onclick="toggle()"> <!-- toggles navbar in menu.js-->
+        <input type="image" id="done" src="./img/close.png" alt="close" onclick="toggle()"> <!-- closes navbar in menu.js-->
+        <ul id="menu">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./services.html">SERVICES</a></li>
+            <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
         <div class="container">
-            <div id="wtrtl_price"></div>
-               
-            <div id="rsi"></div>
-            
+            <div id="wtrtl_price"></div> 
+            <div id="rsi"></div>  
         </div>
     </div>
     <p>What does relative strength index (RSI) mean? An RSI value of 30 or less suggests an oversold/undervalued condition. An RSI value of 70 or more suggests an overbought/overvalued condition. Otherwise the RSI suggests a fair price... Take this metric with a pinch of salt.</p>
 </body>
+
 </html>
