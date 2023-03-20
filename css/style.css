@@ -7,6 +7,7 @@ body{
     font-family: sans-serif;
     font-size: 16px;
     margin: 40px;
+    margin-top: 7px;
 }
 
 .header{
@@ -31,7 +32,6 @@ h1 img{
 
 .container{
     display: flex;
-    /*margin-left: auto;*/
     margin-right: auto;
     flex-direction: row;
     column-gap: 50px; 
@@ -49,22 +49,37 @@ h1 img{
 }
 
 #done{
-    display: none;
+    display: flex;
+    align-self: flex-end;
     width: 55px;
     height: 55px;
-    left: 0;
-    right: 0;
+    padding-top: 17px;
+    position: absolute;
     margin-left: auto;
-    margin-right: 38px;
-    margin-top: 16px;
-    position: fixed;
 }
 
-#menu{
-    display: none;
-    list-style: none;
-    width: 170px;
-    right: 0;
-    margin-top: 95px;
-    position: fixed;
+#menu li{
+    display: inline;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#coingecko{
+    display: flex;
+    flex-direction: row;
+}
+
+#coingecko img{
+    display: flex;
+    flex-direction: row;
+    width: 125px;
+    margin: auto;
+}
+
+p#coingecko{
+    margin: auto;
 }
