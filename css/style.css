@@ -11,12 +11,15 @@ body{
 }
 
 .header_top{
-    font-size: 18px;
     display: flex;
     width: 70px;
     margin-right: auto;
     flex-direction: row;
     justify-content: space-between; 
+}
+
+.header_top img{
+    width: 70px;
 }
 
 .header_bottom{
