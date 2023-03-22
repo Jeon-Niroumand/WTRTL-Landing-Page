@@ -10,46 +10,39 @@ body{
     margin-top: 7px;
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-bottom: 2px solid #00843D;
+.header_top{
     font-size: 18px;
-    position: static;
-}
-
-.header h1{
     display: flex;
-    flex-direction: row;
-    width: 130px;
-}
-
-h1 img{
-    padding-left: 50px;
-    width: 100px;
-}
-
-.container{
-    display: flex;
+    width: 70px;
     margin-right: auto;
     flex-direction: row;
-    column-gap: 50px; 
+    justify-content: space-between; 
+}
+
+.header_bottom{
+    display: flex;
+    column-gap: 50px;
+    border-bottom: 2px solid #00933f;
+}
+
+.stats{
+    display: flex;
+    gap: 20px;
 }
 
 #hamburger{
+    align-self: flex-end;
     width: 75px;
-    height: 75px;
     left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: 30px;
-    margin-top: 7px;
-    position: fixed;
+    position: absolute;
+    padding-right: 30px;
+    margin-top: 6px;
 }
 
 #done{
-    display: flex;
+    display: none;
     align-self: flex-end;
     width: 55px;
     height: 55px;
@@ -58,9 +51,21 @@ h1 img{
     margin-left: auto;
 }
 
-#menu li{
-    display: inline;
+#menu{
+    display: none;
     text-decoration: none;
+}
+
+#menu li{
+    text-decoration: none;
+    margin-inline: 10px;
+    margin-right: 0;
+    display: inline;
+}
+
+ul#menu{
+    margin-block: 0;
+    margin-left: auto;
 }
 
 a{
