@@ -8,6 +8,7 @@ body{
     font-size: 16px;
     margin: 40px;
     margin-top: 7px;
+    
 }
 
 .header_top{
@@ -36,11 +37,9 @@ body{
 #hamburger{
     align-self: flex-end;
     width: 75px;
-    left: 0;
-    right: 0;
     margin-left: auto;
     position: absolute;
-    padding-right: 30px;
+    right: 31px;
     margin-top: 6px;
 }
 
@@ -91,3 +90,25 @@ a{
 p#coingecko{
     margin: auto;
 }
+
+/* lineup class and keyframes */
+.lineUp {
+    animation: 2s anim-lineUp ease-out 1;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
